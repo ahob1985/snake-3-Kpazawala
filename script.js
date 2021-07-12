@@ -1,4 +1,5 @@
 // Author:
+// https://teachablemachine.withgoogle.com/models/IM0kALjcW/
 
 // Global UI Variables
 let canvasDiv;
