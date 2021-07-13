@@ -45,6 +45,11 @@ function setup() {
   // Set the game's framerate to 5 (or whatever you prefer)
   frameRate(5);
   // Load the sound classifier
+  let options = {
+    probabilityThreshold: 0.95
+  };
+
+  soundClassifier = ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/IM0kALjcW/model.json", options, modelReady);
 
 }
 
@@ -111,6 +116,9 @@ function resetGame() {
 }
 
 function modelReady() {
+  soundClassifier.classify(gotResults);
+  isModelReady = true;
+  resetGame();
 
 }
 
